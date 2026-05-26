@@ -1,6 +1,6 @@
 """Constants for the Candy integration."""
 
-DOMAIN = "candy"
+DOMAIN = "candy_bianca"
 PLATFORMS = ["sensor"]
 
 DATA_KEY_COORDINATOR = "coordinator"
