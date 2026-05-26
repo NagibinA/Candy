@@ -1,7 +1,7 @@
 {
-  "domain": "candy",
+  "domain": "candy_bianca",
   "name": "Candy bianca",
-  "codeowners": ["@NagibinA"],
+  "codeowners": ["@ofalvai", "@NagibinA"],
   "config_flow": true,
   "dependencies": [],
   "homekit": {},
