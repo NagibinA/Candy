@@ -1,0 +1,16 @@
+{
+  "domain": "candy_bianca",
+  "name": "Candy bianca",
+  "codeowners": ["@ofalvai", "@NagibinA"],
+  "config_flow": true,
+  "dependencies": [],
+  "homekit": {},
+  "iot_class": "local_polling",
+  "requirements": [
+    "backoff~=2.0",
+    "aiolimiter~=1.0"
+  ],
+  "ssdp": [],
+  "version": "1.0.2",
+  "zeroconf": []
+}
