@@ -1,7 +1,9 @@
 {
-  "name": "Candy",
+  "name": "Candy Bianca",
   "render_readme": true,
-  "iot_class": "Local Push",
+  "iot_class": "local_polling",
   "homeassistant": "2024.1.0",
+  "domains": ["candy_bianca"],
+  "country": ["RU"],
   "zip_release": false
 }
