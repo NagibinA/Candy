@@ -1,0 +1,1294 @@
+views:
+  - title: Стиральная машина
+    type: sections
+    cards: []
+    icon: mdi:washing-machine
+    sections:
+      - type: grid
+        cards:
+          - type: picture-elements
+            image:
+              media_content_id: media-source://image_upload/8ebcc075a6f4caa656a48942be83a263
+              media_content_type: image/png
+              metadata:
+                title: 1_1.png
+                thumbnail: /api/image/serve/8ebcc075a6f4caa656a48942be83a263/256x256
+                media_class: image
+                navigateIds:
+                  - {}
+                  - media_content_type: app
+                    media_content_id: media-source://image_upload
+            dark_mode_image:
+              media_content_id: media-source://image_upload/a5c9ccef54e01e76e4e0d2a148aa7e62
+              media_content_type: image/png
+              metadata:
+                title: 1_1.png
+                thumbnail: /api/image/serve/a5c9ccef54e01e76e4e0d2a148aa7e62/256x256
+                media_class: image
+                navigateIds:
+                  - {}
+                  - media_content_type: app
+                    media_content_id: media-source://image_upload
+            elements:
+              - type: icon
+                style:
+                  transform: translate(0%, 0%)
+                  left: 44.8%
+                  top: 11.2%
+                  "--mdc-icon-size": 49px
+                icon: nav:power
+                card_mod:
+                  style: |
+                    :host {
+                      {% if is_state('binary_sensor.stiralka', 'on') %}
+                      --card-mod-icon-color: cyan;
+                      pointer-events: none;
+                      {% else %}
+                      --card-mod-icon-color: grey;
+                      pointer-events: none;
+                      {% endif %}
+                    }
+              - type: icon
+                style:
+                  transform: translate(0%, 0%)
+                  left: 60.5%
+                  top: 13.2%
+                  "--mdc-icon-size": 49px
+                  color: grey
+                icon: nav:cotton-1
+                card_mod:
+                  style: |
+                    :host {
+                      {% if (is_state('sensor.washing_machine', 'Idle') or is_state('sensor.washing_machine', 'unavailable'))
+                            and is_state('binary_sensor.stiralka', 'on')
+                            and is_state('sensor.remote_control_state', 'Вкл') %}
+                        pointer-events: none;
+                        --card-mod-icon-color: grey;
+                      {% else %}
+                        {% set prog_num = state_attr('sensor.programma_stirki', 'program_number') %}
+                        {% if prog_num == 1 %}  
+                          pointer-events: none;
+                          --card-mod-icon-color: cyan;
+                        {% else %}
+                          pointer-events: none;
+                          --card-mod-icon-color: grey; 
+                        {% endif %}
+                      {% endif %}
+                    } 
+              - type: icon
+                style:
+                  transform: translate(0%, 0%)
+                  left: 71%
+                  top: 20.5%
+                  "--mdc-icon-size": 49px
+                  color: grey
+                icon: nav:cotton-2
+                card_mod:
+                  style: |
+                    :host {
+                      {% if (is_state('sensor.washing_machine', 'Idle') or is_state('sensor.washing_machine', 'unavailable'))
+                            and is_state('binary_sensor.stiralka', 'on')
+                            and is_state('sensor.remote_control_state', 'Вкл') %}
+                        pointer-events: none;
+                        --card-mod-icon-color: grey;
+                      {% else %}
+                        {% set prog_num = state_attr('sensor.programma_stirki', 'program_number') %}
+                        {% if prog_num == 2 %}  
+                          pointer-events: none;
+                          --card-mod-icon-color: cyan;
+                        {% else %}
+                          pointer-events: none;
+                          --card-mod-icon-color: grey; 
+                        {% endif %}
+                      {% endif %}
+                    } 
+              - type: icon
+                style:
+                  transform: translate(0%, 0%)
+                  left: 78%
+                  top: 29.7%
+                  "--mdc-icon-size": 49px
+                  color: grey
+                icon: nav:synthetics
+                card_mod:
+                  style: |
+                    :host {
+                      {% if (is_state('sensor.washing_machine', 'Idle') or is_state('sensor.washing_machine', 'unavailable'))
+                            and is_state('binary_sensor.stiralka', 'on')
+                            and is_state('sensor.remote_control_state', 'Вкл') %}
+                        pointer-events: none;
+                        --card-mod-icon-color: grey;
+                      {% else %}
+                        {% set prog_num = state_attr('sensor.programma_stirki', 'program_number') %}
+                        {% if prog_num == 3 %}  
+                          pointer-events: none;
+                          --card-mod-icon-color: cyan;
+                        {% else %}
+                          pointer-events: none;
+                          --card-mod-icon-color: grey; 
+                        {% endif %}
+                      {% endif %}
+                    } 
+              - type: icon
+                style:
+                  transform: translate(0%, 0%)
+                  left: 78%
+                  top: 40.5%
+                  "--mdc-icon-size": 49px
+                  color: grey
+                icon: nav:wool
+                card_mod:
+                  style: |
+                    :host {
+                      {% if (is_state('sensor.washing_machine', 'Idle') or is_state('sensor.washing_machine', 'unavailable'))
+                            and is_state('binary_sensor.stiralka', 'on')
+                            and is_state('sensor.remote_control_state', 'Вкл') %}
+                        pointer-events: none;
+                        --card-mod-icon-color: grey;
+                      {% else %}
+                        {% set prog_num = state_attr('sensor.programma_stirki', 'program_number') %}
+                        {% if prog_num == 4 %}  
+                          pointer-events: none;
+                          --card-mod-icon-color: cyan;
+                        {% else %}
+                          pointer-events: none;
+                          --card-mod-icon-color: grey; 
+                        {% endif %}
+                      {% endif %}
+                    } 
+              - type: icon
+                style:
+                  transform: translate(0%, 0%)
+                  left: 71.5%
+                  top: 49.5%
+                  "--mdc-icon-size": 49px
+                  color: grey
+                icon: nav:delicate
+                card_mod:
+                  style: |
+                    :host {
+                      {% if (is_state('sensor.washing_machine', 'Idle') or is_state('sensor.washing_machine', 'unavailable'))
+                            and is_state('binary_sensor.stiralka', 'on')
+                            and is_state('sensor.remote_control_state', 'Вкл') %}
+                        pointer-events: none;
+                        --card-mod-icon-color: grey;
+                      {% else %}
+                        {% set prog_num = state_attr('sensor.programma_stirki', 'program_number') %}
+                        {% if prog_num == 5 %}  
+                          pointer-events: none;
+                          --card-mod-icon-color: cyan;
+                        {% else %}
+                          pointer-events: none;
+                          --card-mod-icon-color: grey; 
+                        {% endif %}
+                      {% endif %}
+                    } 
+              - type: icon
+                style:
+                  transform: translate(0%, 0%)
+                  left: 59%
+                  top: 56.5%
+                  "--mdc-icon-size": 49px
+                  color: grey
+                icon: nav:perfect20
+                card_mod:
+                  style: |
+                    :host {
+                      {% if (is_state('sensor.washing_machine', 'Idle') or is_state('sensor.washing_machine', 'unavailable'))
+                            and is_state('binary_sensor.stiralka', 'on')
+                            and is_state('sensor.remote_control_state', 'Вкл') %}
+                        pointer-events: none;
+                        --card-mod-icon-color: grey;
+                      {% else %}
+                        {% set prog_num = state_attr('sensor.programma_stirki', 'program_number') %}
+                        {% if prog_num == 6 %}  
+                          pointer-events: none;
+                          --card-mod-icon-color: cyan;
+                        {% else %}
+                          pointer-events: none;
+                          --card-mod-icon-color: grey; 
+                        {% endif %}
+                      {% endif %}
+                    } 
+              - type: icon
+                style:
+                  transform: translate(0%, 0%)
+                  left: 45%
+                  top: 58.8%
+                  "--mdc-icon-size": 49px
+                  color: grey
+                icon: nav:rinsing
+                card_mod:
+                  style: |
+                    :host {
+                      {% if (is_state('sensor.washing_machine', 'Idle') or is_state('sensor.washing_machine', 'unavailable'))
+                            and is_state('binary_sensor.stiralka', 'on')
+                            and is_state('sensor.remote_control_state', 'Вкл') %}
+                        pointer-events: none;
+                        --card-mod-icon-color: grey;
+                      {% else %}
+                        {% set prog_num = state_attr('sensor.programma_stirki', 'program_number') %}
+                        {% if prog_num == 7 %}  
+                          pointer-events: none;
+                          --card-mod-icon-color: cyan;
+                        {% else %}
+                          pointer-events: none;
+                          --card-mod-icon-color: grey; 
+                        {% endif %}
+                      {% endif %}
+                    } 
+              - type: icon
+                style:
+                  transform: translate(0%, 0%)
+                  left: 30%
+                  top: 56.5%
+                  "--mdc-icon-size": 49px
+                  color: grey
+                icon: nav:draining
+                card_mod:
+                  style: |
+                    :host {
+                      {% if (is_state('sensor.washing_machine', 'Idle') or is_state('sensor.washing_machine', 'unavailable'))
+                            and is_state('binary_sensor.stiralka', 'on')
+                            and is_state('sensor.remote_control_state', 'Вкл') %}
+                        pointer-events: none;
+                        --card-mod-icon-color: grey;
+                      {% else %}
+                        {% set prog_num = state_attr('sensor.programma_stirki', 'program_number') %}
+                        {% if prog_num == 8 %}  
+                          pointer-events: none;
+                          --card-mod-icon-color: cyan;
+                        {% else %}
+                          pointer-events: none;
+                          --card-mod-icon-color: grey; 
+                        {% endif %}
+                      {% endif %}
+                    } 
+              - type: icon
+                style:
+                  transform: translate(0%, 0%)
+                  left: 20%
+                  top: 50%
+                  "--mdc-icon-size": 49px
+                  color: grey
+                icon: mdi:thermometer-water
+                hold_action:
+                  action: none
+                tap_action:
+                  action: perform-action
+                  perform_action: input_select.select_next
+                  target:
+                    entity_id: input_select.washing_temperature_select
+                  data:
+                    cycle: true
+                card_mod:
+                  style: |
+                    :host {
+                      {% set machine_ready = is_state('sensor.washing_machine', 'Idle') 
+                                             and is_state('binary_sensor.stiralka', 'on')
+                                             and is_state('sensor.remote_control_state', 'Вкл') %}
+                      {% if machine_ready %}
+                        --card-mod-icon-color: cyan;
+                      {% else %}
+
+                        --card-mod-icon-color: grey;
+                      {% endif %}
+                    }
+              - type: icon
+                style:
+                  transform: translate(0%, 0%)
+                  left: 11.5%
+                  top: 40.5%
+                  "--mdc-icon-size": 49px
+                  color: grey
+                icon: nav:spin
+                hold_action:
+                  action: none
+                tap_action:
+                  action: perform-action
+                  perform_action: input_select.select_next
+                  target:
+                    entity_id: input_select.washing_spin_select
+                  data:
+                    cycle: true
+                card_mod:
+                  style: |
+                    :host {
+                      {% set machine_ready = is_state('sensor.washing_machine', 'Idle') 
+                                             and is_state('binary_sensor.stiralka', 'on')
+                                             and is_state('sensor.remote_control_state', 'Вкл') %}
+                      {% if machine_ready %}
+                        --card-mod-icon-color: cyan;
+                      {% else %}
+
+                        --card-mod-icon-color: grey;
+                      {% endif %}
+                    }
+              - type: icon
+                style:
+                  transform: translate(0%, 0%)
+                  left: 11%
+                  top: 30%
+                  "--mdc-icon-size": 49px
+                  color: grey
+                icon: nav:delay
+                hold_action:
+                  action: none
+                tap_action:
+                  action: perform-action
+                  perform_action: input_select.select_next
+                  target:
+                    entity_id: input_select.washing_start_delay
+                  data:
+                    cycle: true
+                card_mod:
+                  style: |
+                    :host {
+                      {% set machine_ready = is_state('sensor.washing_machine', 'Idle') 
+                                             and is_state('binary_sensor.stiralka', 'on')
+                                             and is_state('sensor.remote_control_state', 'Вкл') %}
+                      {% if machine_ready %}
+                        --card-mod-icon-color: cyan;
+                      {% else %}
+
+                        --card-mod-icon-color: grey;
+                      {% endif %}
+                    }
+              - type: icon
+                style:
+                  transform: translate(0%, 0%)
+                  left: 18%
+                  top: 20%
+                  "--mdc-icon-size": 49px
+                  color: grey
+                icon: nav:steam-1
+                hold_action:
+                  action: none
+                tap_action:
+                  action: perform-action
+                  perform_action: input_select.select_next
+                  target:
+                    entity_id: input_select.washing_steam_select
+                  data:
+                    cycle: true
+                card_mod:
+                  style: |
+                    :host {
+                      {% set machine_ready = is_state('sensor.washing_machine', 'Idle') 
+                                             and is_state('binary_sensor.stiralka', 'on')
+                                             and is_state('sensor.remote_control_state', 'Вкл') %}
+                      {% set steam_val = states('input_select.washing_steam_select') %}
+                      
+                      {% if machine_ready %}
+
+                        pointer-events: auto;
+                        --card-mod-icon-color: {{ 'cyan' if steam_val == 'С паром' else 'grey' }};
+                      {% else %}
+
+                        pointer-events: none;
+                        --card-mod-icon-color: grey;
+                      {% endif %}
+                    }
+              - type: icon
+                style:
+                  transform: translate(0%, 0%)
+                  left: 38%
+                  top: 45%
+                  "--mdc-icon-size": 110px
+                  color: grey
+                icon: nav:zoom
+                tap_action:
+                  action: perform-action
+                  perform_action: input_select.select_next
+                  target:
+                    entity_id: input_select.washing_zoom_select
+                  data:
+                    cycle: true
+                card_mod:
+                  style: |
+                    :host {
+                      {% set remote_off = is_state('sensor.remote_control_state', 'Выкл') %}
+                      {% set machine_ready = is_state('sensor.washing_machine', 'Idle') 
+                                             and is_state('binary_sensor.stiralka', 'on') %}
+                      {% set zoom_on = is_state('sensor.zoom_state', 'Вкл') %}
+                      
+                      {% if remote_off %}
+                        {# Режим 1: Удаленка ВЫКЛ #}
+                        --card-mod-icon-color: {{ 'cyan' if zoom_on else 'grey' }};
+                        pointer-events: none;
+                      
+                      {% elif machine_ready %}
+                        {# Режим 2: Удаленка ВКЛ и машина готова #}
+                        pointer-events: auto;
+                        {% set select_val = states('input_select.washing_zoom_select') %}
+                        --card-mod-icon-color: {{ 'cyan' if select_val == 'Есть' else 'grey' }};
+                      
+                      {% else %}
+                        {# Режим 3: Удаленка ВКЛ, но машина не готова #}
+                        --card-mod-icon-color: {{ 'cyan' if zoom_on else 'grey' }};
+                        pointer-events: none;
+                      {% endif %}
+                    }        
+              - type: icon
+                style:
+                  transform: translate(0%, 0%)
+                  left: 30%
+                  top: 14%
+                  "--mdc-icon-size": 49px
+                  color: grey
+                icon: mdi:wifi
+                card_mod:
+                  style: |
+                    :host {
+                      {% if is_state('binary_sensor.stiralka', 'on' )  and is_state('sensor.remote_control_state', 'Вкл') %}
+                      --card-mod-icon-color: cyan;
+                      pointer-events: none;
+                      {% else %}
+                      --card-mod-icon-color: grey;
+                      pointer-events: none;
+                      {% endif %}
+                    }    
+              - type: icon
+                style:
+                  transform: translate(0%, 0%)
+                  left: 52%
+                  top: 23.6%
+                  "--mdc-icon-size": 52px
+                  color: grey
+                icon: mdi:play
+                tap_action:
+                  action: perform-action
+                  perform_action: script.start_washing
+                  target: {}
+                hold_action:
+                  action: none
+                card_mod:
+                  style: |
+                    :host {
+                      {% if is_state('binary_sensor.stiralka', 'on') and is_state('sensor.washing_machine', 'Idle') and is_state('sensor.remote_control_state', 'Вкл') %}
+                      pointer-events: auto;
+                      --card-mod-icon-color: white;
+                      {% elif is_state('binary_sensor.stiralka', 'on') and is_state('sensor.remote_control_state', 'Вкл') %}
+                      pointer-events: none;
+                      --card-mod-icon-color: cyan;
+                      {% elif is_state('binary_sensor.stiralka', 'on') %}
+                      pointer-events: none;
+                      --card-mod-icon-color: grey;      
+                      {% else %}
+                      pointer-events: none;
+                      --card-mod-icon-color: grey;
+                      {% endif %}     
+                      }
+              - type: icon
+                style:
+                  transform: translate(0%, 0%)
+                  left: 60%
+                  top: 23.6%
+                  "--mdc-icon-size": 52px
+                  color: grey
+                icon: mdi:stop
+                tap_action:
+                  action: perform-action
+                  perform_action: script.stop_washing
+                  target: {}
+                card_mod:
+                  style: |
+                    :host {
+                      {% if is_state('binary_sensor.stiralka', 'on') and is_state('sensor.washing_machine', 'Idle') and is_state('sensor.remote_control_state', 'Вкл') %}
+                        pointer-events:  none;
+                        visibility: visible;
+                        --card-mod-icon-color: cyan; 
+                      {% elif is_state('binary_sensor.stiralka', 'on') and is_state('sensor.remote_control_state', 'Вкл') %}
+                      pointer-events: auto;
+                      --card-mod-icon-color: white;        
+                      {% elif is_state('binary_sensor.stiralka', 'on') %}
+                        pointer-events: none;
+                        --card-mod-icon-color: grey;       
+                      {% else %}
+                        pointer-events: none;
+                        --card-mod-icon-color: grey; 
+                      {% endif %}     
+                    }
+              - type: icon
+                style:
+                  transform: translate(0%, 0%)
+                  "--mdc-icon-size": 26px
+                  left: 58%
+                  top: 34.5%
+                  color: aqua
+                  pointer-events: none
+                icon: mdi:rotate-right
+                tap_action:
+                  action: none
+                hold_action:
+                  action: none
+                card_mod:
+                  style: |
+                    :host {
+                      {% if (is_state('sensor.washing_machine', 'Idle') or is_state('sensor.washing_machine', 'unavailable'))
+                            and is_state('binary_sensor.stiralka', 'on')
+                            and is_state('sensor.remote_control_state', 'Вкл') %}
+                        visibility: hidden;
+                        pointer-events: none;
+                      {% elif is_state('sensor.washing_machine', 'unavailable') %}
+                        visibility: hidden;      
+                      {% else %}
+                        visibility: visible;
+                        pointer-events: none;
+                      {% endif %}
+                    } 
+              - type: state-label
+                style:
+                  transform: translate(0%, 0%)
+                  left: 62%
+                  top: 33%
+                  font-size: 18px
+                  font-weight: bold
+                  color: aqua
+                  pointer-events: none
+                entity: sensor.washing_machine
+                attribute: spin_speed
+                tap_action:
+                  action: none
+                hold_action:
+                  action: none
+                card_mod:
+                  style: |
+                    :host {
+                      {% if (is_state('sensor.washing_machine', 'Idle') or is_state('sensor.washing_machine', 'unavailable'))
+                            and is_state('binary_sensor.stiralka', 'on')
+                            and is_state('sensor.remote_control_state', 'Вкл') %}
+                        visibility: hidden;
+                        pointer-events: none;
+                      {% elif is_state('sensor.washing_machine', 'unavailable') %}
+                        visibility: hidden;      
+                      {% else %}
+                        visibility: visible;
+                        pointer-events: none;
+                      {% endif %}
+                    } 
+              - type: icon
+                style:
+                  transform: translate(0%, 0%)
+                  "--mdc-icon-size": 26px
+                  left: 62%
+                  top: 38.5%
+                  color: aqua
+                  pointer-events: none
+                icon: mdi:thermometer-water
+                card_mod:
+                  style: |
+                    :host {
+                      {% if (is_state('sensor.washing_machine', 'Idle') or is_state('sensor.washing_machine', 'unavailable'))
+                            and is_state('binary_sensor.stiralka', 'on')
+                            and is_state('sensor.remote_control_state', 'Вкл') %}
+                        visibility: hidden;
+                        pointer-events: none;
+                      {% elif is_state('sensor.washing_machine', 'unavailable') %}
+                        visibility: hidden;      
+                      {% else %}
+                        visibility: visible;
+                        pointer-events: none;
+                      {% endif %}
+                    } 
+              - type: state-label
+                style:
+                  transform: translate(0%, 0%)
+                  left: 66.5%
+                  top: 37.5%
+                  font-size: 18px
+                  font-weight: bold
+                  color: aqua
+                  pointer-events: none
+                entity: sensor.washing_machine
+                attribute: temperature
+                tap_action:
+                  action: none
+                hold_action:
+                  action: none
+                card_mod:
+                  style: |
+                    :host {
+                      {% if (is_state('sensor.washing_machine', 'Idle') or is_state('sensor.washing_machine', 'unavailable'))
+                            and is_state('binary_sensor.stiralka', 'on')
+                            and is_state('sensor.remote_control_state', 'Вкл') %}
+                        visibility: hidden;
+                        pointer-events: none;
+                      {% elif is_state('sensor.washing_machine', 'unavailable') %}
+                        visibility: hidden;      
+                      {% else %}
+                        visibility: visible;
+                        pointer-events: none;
+                      {% endif %}
+                    } 
+              - type: icon
+                style:
+                  transform: translate(0%, 0%)
+                  left: 27%
+                  top: 34.5%
+                  color: aqua
+                  pointer-events: none
+                icon: mdi:timer-play-outline
+                card_mod:
+                  style: |
+                    :host {
+                      {% if (is_state('sensor.washing_machine', 'Idle') or is_state('sensor.washing_machine', 'unavailable'))
+                            and is_state('binary_sensor.stiralka', 'on')
+                            and is_state('sensor.remote_control_state', 'Вкл') %}
+                        visibility: hidden;
+                        pointer-events: none;
+                      {% elif is_state('sensor.washing_machine', 'unavailable') %}
+                        visibility: hidden;      
+                      {% else %}
+                        visibility: visible;
+                        pointer-events: none;
+                      {% endif %}
+                    } 
+              - type: state-label
+                style:
+                  transform: translate(0%, 0%)
+                  left: 32%
+                  top: 33%
+                  font-size: 18px
+                  font-weight: bold
+                  color: aqua
+                  pointer-events: none
+                entity: sensor.ostalos_vremeni
+                tap_action:
+                  action: none
+                hold_action:
+                  action: none
+                card_mod:
+                  style: |
+                    :host {
+                      {% if (is_state('sensor.washing_machine', 'Idle') or is_state('sensor.washing_machine', 'unavailable'))
+                            and is_state('binary_sensor.stiralka', 'on')
+                            and is_state('sensor.remote_control_state', 'Вкл') %}
+                        visibility: hidden;
+                        pointer-events: none;
+                      {% elif is_state('sensor.washing_machine', 'unavailable') %}
+                        visibility: hidden;      
+                      {% else %}
+                        visibility: visible;
+                        pointer-events: none;
+                      {% endif %}
+                    } 
+              - type: state-label
+                style:
+                  transform: translate(0%, 0%)
+                  left: 27%
+                  top: 37.5%
+                  font-size: 18px
+                  font-weight: bold
+                  color: aqua
+                  pointer-events: none
+                entity: sensor.washing_program_stage
+                tap_action:
+                  action: none
+                hold_action:
+                  action: none
+                card_mod:
+                  style: |
+                    :host {
+                      {% if (is_state('sensor.washing_machine', 'Idle') or is_state('sensor.washing_machine', 'unavailable'))
+                            and is_state('binary_sensor.stiralka', 'on')
+                            and is_state('sensor.remote_control_state', 'Вкл') %}
+                        visibility: hidden;
+                        pointer-events: none;
+                      {% elif is_state('sensor.washing_machine', 'unavailable') %}
+                        visibility: hidden;      
+                      {% else %}
+                        visibility: visible;
+                        pointer-events: none;
+                      {% endif %}
+                    } 
+              - type: state-icon
+                style:
+                  transform: translate(0%, 0%)
+                  left: 23%
+                  top: 43%
+                entity: sensor.slevel_state
+                card_mod:
+                  style: |
+                    :host {
+                      {% set machine_ready = is_state('sensor.washing_machine', 'Idle') 
+                                             and is_state('binary_sensor.stiralka', 'on')
+                                             and is_state('sensor.remote_control_state', 'Вкл') %}
+                     
+                      {# Показываем только когда НЕ готовы к выбору #}
+                      visibility: {{ 'visible' if not machine_ready else 'hidden' }};
+                      pointer-events: none;
+                      --card-mod-icon-color: {{ 'cyan' if is_state('sensor.slevel_state', 'Сильно') 
+                                                   or is_state('sensor.slevel_state', 'Нормально')
+                                                   or is_state('sensor.slevel_state', 'Мало') else 'grey' }};
+                    }
+              - type: state-icon
+                style:
+                  transform: translate(0%, 0%)
+                  left: 30%
+                  top: 43%
+                entity: sensor.opt1_state
+                card_mod:
+                  style: |
+                    :host {
+                      {% set machine_ready = is_state('sensor.washing_machine', 'Idle') 
+                                             and is_state('binary_sensor.stiralka', 'on')
+                                             and is_state('sensor.remote_control_state', 'Вкл') %}
+                      {% set opt1_state = states('sensor.opt1_state') %}
+                      
+                      {% if not machine_ready and is_state('binary_sensor.stiralka', 'on') and opt1_state == 'Вкл' %}
+                        visibility: visible;
+                        --card-mod-icon-color: cyan;
+                      {% else %}
+                        visibility: hidden;
+                        --card-mod-icon-color: grey;
+                      {% endif %}
+                      pointer-events: none;
+                    }
+              - type: state-icon
+                style:
+                  transform: translate(0%, 0%)
+                  left: 37%
+                  top: 43%
+                entity: sensor.hygiene_wash_state
+                card_mod:
+                  style: |
+                    :host {
+                      {% if is_state('binary_sensor.stiralka', 'on') and is_state('sensor.hygiene_wash_state', 'Вкл') %}
+                      pointer-events: none;
+                      visibility: visible;
+                      --card-mod-icon-color: cyan;
+                      {% else %}
+                      pointer-events: none;
+                      visibility: hidden;
+                      {% endif %}
+
+                      }
+              - type: state-icon
+                style:
+                  transform: translate(0%, 0%)
+                  left: 45%
+                  top: 43%
+                entity: sensor.anti_crease_state
+                card_mod:
+                  style: |
+                    :host {
+                      {% if is_state('binary_sensor.stiralka', 'on') and is_state('sensor.anti_crease_state', 'Вкл') %}
+                      pointer-events: none;
+                      visibility: visible;
+                      --card-mod-icon-color: cyan;          
+                      {% else %}
+                      pointer-events: none;
+                      visibility: hidden;
+                      {% endif %}
+
+                      }
+              - type: state-icon
+                style:
+                  transform: translate(0%, 0%)
+                  left: 53%
+                  top: 43%
+                entity: sensor.night_spin_state
+                card_mod:
+                  style: |
+                    :host {
+                      {% if is_state('binary_sensor.stiralka', 'on') and is_state('sensor.night_spin_state', 'Вкл') %}
+                      pointer-events: none;
+                      visibility: visible;
+                      --card-mod-icon-color: cyan; 
+                      {% else %}
+                      pointer-events: none;
+                      visibility: hidden;
+                      {% endif %}
+                      } 
+              - type: state-icon
+                style:
+                  transform: translate(0%, 0%)
+                  left: 60%
+                  top: 43%
+                entity: sensor.rinse_1_state
+                card_mod:
+                  style: |
+                    :host {
+                      {% if is_state('binary_sensor.stiralka', 'on') and is_state('sensor.rinse_1_state', 'Вкл') %}
+                      pointer-events: none;
+                      visibility: visible;
+                      --card-mod-icon-color: cyan;           
+                      {% else %}
+                      pointer-events: none;
+                      visibility: hidden;
+                      {% endif %}
+                      } 
+              - type: state-icon
+                style:
+                  transform: translate(0%, 0%)
+                  left: 60%
+                  top: 43%
+                entity: sensor.rinse_2_state
+                card_mod:
+                  style: |
+                    :host {
+                      {% if is_state('binary_sensor.stiralka', 'on') and is_state('sensor.rinse_2_state', 'Вкл') %}
+                      pointer-events: none;
+                      visibility: visible;
+                      --card-mod-icon-color: cyan;           
+                      {% else %}
+                      pointer-events: none;
+                      visibility: hidden;
+                      {% endif %}
+                      } 
+              - type: state-icon
+                style:
+                  transform: translate(0%, 0%)
+                  left: 60%
+                  top: 43%
+                entity: sensor.rinse_3_state
+                card_mod:
+                  style: |
+                    :host {
+                      {% if is_state('binary_sensor.stiralka', 'on') and is_state('sensor.rinse_3_state', 'Вкл') %}
+                      pointer-events: none;
+                      visibility: visible;
+                      --card-mod-icon-color: cyan;           
+                      {% else %}
+                      pointer-events: none;
+                      visibility: hidden;
+                      {% endif %}
+                      }  
+                      
+              - type: state-icon
+                style:
+                  transform: translate(0%, 0%)
+                  left: 67%
+                  top: 43%
+                entity: sensor.extra_water_state
+                card_mod:
+                  style: |
+                    :host {
+                      {% if is_state('binary_sensor.stiralka', 'on') and is_state('sensor.extra_water_state', 'Вкл') %}
+                      pointer-events: none;
+                      visibility: visible;
+                      --card-mod-icon-color: cyan; 
+                      {% else %}
+                      pointer-events: none;
+                      visibility: hidden;
+                      {% endif %}
+                      } 
+              - type: state-label
+                style:
+                  transform: translate(0%, 0%)
+                  left: 25%
+                  top: 29.5%
+                entity: sensor.washing_machine_error_status
+                card_mod:
+                  style: |
+                    :host {
+                      {% set washer_on = is_state('binary_sensor.stiralka', 'on') %}
+                      {% set error_status = states('sensor.washing_machine_error_status') %}
+                      {% set has_no_errors = error_status == 'Ошибок нет' %}
+                      {% set is_available = error_status != 'unavailable' %}
+                      
+                      {% if washer_on and has_no_errors %}
+                      color: red; 
+                      visibility: hidden;
+                      {% elif washer_on and is_available %}
+                      color: red; 
+                      pointer-events: auto;
+                      visibility: visible;
+                      {% else %}
+                      pointer-events: none;
+                      visibility: hidden;
+                      {% endif %}
+                    }
+              - type: icon
+                style:
+                  transform: translate(0%, 0%)
+                  left: 25%
+                  top: 44.2%
+                  color: grey
+                icon: phu:duco-1
+                tap_action:
+                  action: perform-action
+                  perform_action: input_select.select_next
+                  target:
+                    entity_id: input_select.washing_soil_select
+                  data:
+                    cycle: true
+                card_mod:
+                  style: |
+                    :host {
+                      {% set machine_ready = is_state('sensor.washing_machine', 'Idle') 
+                                             and is_state('binary_sensor.stiralka', 'on')
+                                             and is_state('sensor.remote_control_state', 'Вкл') %}
+                      {% set select_val = states('input_select.washing_soil_select') %}
+                      
+                      {# Показываем только когда готовы к выбору #}
+                      visibility: {{ 'visible' if machine_ready else 'hidden' }};
+                      pointer-events: {{ 'auto' if machine_ready else 'none' }};
+                      
+                      {% if select_val == 'Мало' %}
+                        --card-mod-icon: phu:duco-1;
+                        --card-mod-icon-color: cyan
+                      {% elif select_val == 'Нормально' %}
+                        --card-mod-icon: phu:duco-2;
+                        --card-mod-icon-color: cyan
+                      {% elif select_val == 'Очень' %}
+                        --card-mod-icon: phu:duco-3;
+                        --card-mod-icon-color: cyan
+                      {% else %}
+                        --card-mod-icon: phu:duco-1;
+                        --card-mod-icon-color: grey       
+                      {% endif %}
+                    }
+              - type: icon
+                style:
+                  transform: translate(0%, 0%)
+                  left: 31.7%
+                  top: 44.2%
+                  color: grey
+                icon: nav:pre-wash
+                tap_action:
+                  action: perform-action
+                  perform_action: input_select.select_next
+                  target:
+                    entity_id: input_select.washing_prewash_select
+                  data:
+                    cycle: true
+                card_mod:
+                  style: |
+                    :host {
+                      {% set machine_ready = is_state('sensor.washing_machine', 'Idle') 
+                                             and is_state('binary_sensor.stiralka', 'on')
+                                             and is_state('sensor.remote_control_state', 'Вкл') %}
+                      {% set prewash_val = states('input_select.washing_prewash_select') %}
+                      
+                      {% if machine_ready %}
+                        visibility: visible;
+                        pointer-events: auto;
+                        --card-mod-icon-color: {{ 'cyan' if prewash_val == 'Есть' else 'grey' }};
+                      {% else %}
+                        visibility: hidden;
+                        pointer-events: none;
+                        --card-mod-icon-color: grey;
+                      {% endif %}
+                    }
+              - type: icon
+                style:
+                  transform: translate(0%, 0%)
+                  left: 35%
+                  top: 23.5%
+                  "--mdc-icon-size": 65px
+                  color: grey
+                  opacity: 0.7
+                icon: nav:set
+                tap_action:
+                  action: perform-action
+                  perform_action: input_select.select_next
+                  target:
+                    entity_id: input_select.washing_program
+                  data:
+                    cycle: true
+                hold_action:
+                  action: none
+                card_mod:
+                  style: |
+                    :host {
+                      {% set machine_ready = is_state('sensor.washing_machine', 'Idle') 
+                                             and is_state('binary_sensor.stiralka', 'on')
+                                             and is_state('sensor.remote_control_state', 'Вкл') %}         
+                      {% if machine_ready %}
+                        pointer-events: auto;
+                        --card-mod-icon-color: cyan;
+                      {% else %}
+                        pointer-events: none;
+                        --card-mod-icon-color: grey;
+                      {% endif %}
+                    }
+              - type: state-label
+                style:
+                  left: 50%
+                  top: 49%
+                entity: input_select.washing_program
+                tap_action:
+                  action: none
+                hold_action:
+                  action: more-info
+                card_mod:
+                  style: |
+                    :host {
+                      {% set machine_ready = is_state('sensor.washing_machine', 'Idle') 
+                                             and is_state('binary_sensor.stiralka', 'on')
+                                             and is_state('sensor.remote_control_state', 'Вкл') %}         
+                      {% if machine_ready %}
+                        pointer-events: auto;
+                        color: cyan;
+                        visibility: visible;
+                      {% else %}
+                        pointer-events: none;
+                        color: grey;
+                        visibility: hidden; 
+                      {% endif %}
+                    }
+              - type: icon
+                style:
+                  transform: translate(0%, 0%)
+                  left: 39%
+                  top: 44.2%
+                  color: grey
+                icon: nav:hygiene-wash
+                tap_action:
+                  action: perform-action
+                  perform_action: input_select.select_next
+                  target:
+                    entity_id: input_select.washing_hygiene_select
+                  data:
+                    cycle: true
+                card_mod:
+                  style: |
+                    :host {
+                      {% set machine_ready = is_state('sensor.washing_machine', 'Idle') 
+                                             and is_state('binary_sensor.stiralka', 'on')
+                                             and is_state('sensor.remote_control_state', 'Вкл') %}
+                      {% set hygiene_val = states('input_select.washing_hygiene_select') %}
+                      
+                      {% if machine_ready %}
+                        visibility: visible;
+                        pointer-events: auto;
+                        --card-mod-icon-color: {{ 'cyan' if hygiene_val == 'Есть' else 'grey' }};
+                      {% else %}
+                        visibility: hidden;
+                        pointer-events: none;
+                        --card-mod-icon-color: grey;
+                      {% endif %}
+                    }
+              - type: icon
+                style:
+                  transform: translate(0%, 0%)
+                  left: 46.6%
+                  top: 44.2%
+                  color: grey
+                icon: nav:anti-crease
+                tap_action:
+                  action: perform-action
+                  perform_action: input_select.select_next
+                  target:
+                    entity_id: input_select.washing_anticrease_select
+                  data:
+                    cycle: true
+                hold_action:
+                  action: none
+                card_mod:
+                  style: |
+                    :host {
+                      {% set machine_ready = is_state('sensor.washing_machine', 'Idle') 
+                                             and is_state('binary_sensor.stiralka', 'on')
+                                             and is_state('sensor.remote_control_state', 'Вкл') %}
+                      {% set anticrease_val = states('input_select.washing_anticrease_select') %}
+                      
+                      {% if machine_ready %}
+                        visibility: visible;
+                        pointer-events: auto;
+                        --card-mod-icon-color: {{ 'cyan' if anticrease_val == 'Есть' else 'grey' }};
+                      {% else %}
+                        visibility: hidden;
+                        pointer-events: none;
+                        --card-mod-icon-color: grey;
+                      {% endif %}
+                    }
+              - type: icon
+                style:
+                  transform: translate(0%, 0%)
+                  left: 55%
+                  top: 44.2%
+                  color: grey
+                icon: nav:night-spin
+                hold_action:
+                  action: none
+                tap_action:
+                  action: perform-action
+                  perform_action: input_select.select_next
+                  target:
+                    entity_id: input_select.washing_nightwash_select
+                  data:
+                    cycle: true
+                card_mod:
+                  style: |
+                    :host {
+                      {% set machine_ready = is_state('sensor.washing_machine', 'Idle') 
+                                             and is_state('binary_sensor.stiralka', 'on')
+                                             and is_state('sensor.remote_control_state', 'Вкл') %}
+                      {% set nightwash_val = states('input_select.washing_nightwash_select') %}
+                      
+                      {% if machine_ready %}
+                        visibility: visible;
+                        pointer-events: auto;
+                        --card-mod-icon-color: {{ 'cyan' if nightwash_val == 'Есть' else 'grey' }};
+                      {% else %}
+                        visibility: hidden;
+                        pointer-events: none;
+                        --card-mod-icon-color: grey;
+                      {% endif %}
+                    }
+              - type: icon
+                style:
+                  transform: translate(0%, 0%)
+                  left: 62%
+                  top: 44.2%
+                  color: grey
+                icon: nav:rinse-1
+                hold_action:
+                  action: none
+                tap_action:
+                  action: perform-action
+                  perform_action: input_select.select_next
+                  target:
+                    entity_id: input_select.washing_extra_rinse_select
+                  data:
+                    cycle: true
+                card_mod:
+                  style: |
+                    :host {
+                      {% set machine_ready = is_state('sensor.washing_machine', 'Idle') 
+                                             and is_state('binary_sensor.stiralka', 'on')
+                                             and is_state('sensor.remote_control_state', 'Вкл') %}
+                      {% set rinse_val = states('input_select.washing_extra_rinse_select') %}
+                      
+                      {# Показываем только когда готовы к выбору #}
+                      visibility: {{ 'visible' if machine_ready else 'hidden' }};
+                      pointer-events: {{ 'auto' if machine_ready else 'none' }};
+                      
+                      {% if rinse_val == '1 полоскание' %}
+                        --card-mod-icon: nav:rinse-1;
+                        --card-mod-icon-color: cyan
+                      {% elif rinse_val == '2 полоскания' %}
+                        --card-mod-icon: nav:rinse-2;
+                        --card-mod-icon-color: cyan
+                      {% elif rinse_val == '3 полоскания' %}
+                        --card-mod-icon: nav:rinse-3;
+                        --card-mod-icon-color: cyan
+                      {% else %}
+                        --card-mod-icon: nav:rinse-1;
+                        --card-mod-icon-color: grey       
+                      {% endif %}
+                    }
+              - type: icon
+                style:
+                  transform: translate(0%, 0%)
+                  left: 68.5%
+                  top: 44.2%
+                  color: grey
+                icon: nav:extra-water
+                hold_action:
+                  action: none
+                tap_action:
+                  action: perform-action
+                  perform_action: input_select.select_next
+                  target:
+                    entity_id: input_select.washing_aquaplus_select
+                  data:
+                    cycle: true
+                card_mod:
+                  style: |
+                    :host {
+                      {% set machine_ready = is_state('sensor.washing_machine', 'Idle') 
+                                             and is_state('binary_sensor.stiralka', 'on')
+                                             and is_state('sensor.remote_control_state', 'Вкл') %}
+                      {% set aquaplus_val = states('input_select.washing_aquaplus_select') %}
+                      
+                      {% if machine_ready %}
+                        visibility: visible;
+                        pointer-events: auto;
+                        --card-mod-icon-color: {{ 'cyan' if aquaplus_val == 'Есть' else 'grey' }};
+                      {% else %}
+                        visibility: hidden;
+                        pointer-events: none;
+                        --card-mod-icon-color: grey;
+                      {% endif %}
+                    }
+              - type: state-label
+                style:
+                  transform: translate(0%, 0%)
+                  left: 48%
+                  top: 33%
+                  color: cyan
+                  font-size: 18px
+                  font-weight: bold
+                entity: input_select.washing_spin_select
+                tap_action:
+                  action: none
+                hold_action:
+                  action: more-info
+                card_mod:
+                  style: |
+                    :host {
+                      {% set machine_ready = is_state('sensor.washing_machine', 'Idle') 
+                                             and is_state('binary_sensor.stiralka', 'on')
+                                             and is_state('sensor.remote_control_state', 'Вкл') %}
+
+                      {% if machine_ready %}
+                        visibility: visible;
+
+                      {% else %}
+                        visibility: hidden;
+
+                      {% endif %}
+                    }
+              - type: state-label
+                style:
+                  transform: translate(0%, 0%)
+                  left: 62%
+                  top: 38%
+                  color: cyan
+                  font-size: 18px
+                  font-weight: bold
+                entity: input_select.washing_temperature_select
+                card_mod:
+                  style: |
+                    :host {
+                      {% set machine_ready = is_state('sensor.washing_machine', 'Idle') 
+                                             and is_state('binary_sensor.stiralka', 'on')
+                                             and is_state('sensor.remote_control_state', 'Вкл') %}
+
+                      {% if machine_ready %}
+                        visibility: visible;
+
+                      {% else %}
+                        visibility: hidden;
+
+                      {% endif %}
+                    }
+              - type: state-label
+                style:
+                  transform: translate(0%, 0%)
+                  left: 25%
+                  top: 38%
+                  color: cyan
+                  font-size: 18px
+                  font-weight: bold
+                entity: input_select.washing_start_delay
+                tap_action:
+                  action: none
+                card_mod:
+                  style: |
+                    :host {
+                      {% set machine_ready = is_state('sensor.washing_machine', 'Idle') 
+                                             and is_state('binary_sensor.stiralka', 'on')
+                                             and is_state('sensor.remote_control_state', 'Вкл') %}
+
+                      {% if machine_ready %}
+                        visibility: visible;
+
+                      {% else %}
+                        visibility: hidden;
+
+                      {% endif %}
+                    }
+              - type: state-label
+                style:
+                  transform: translate(0%, 0%)
+                  left: 45%
+                  top: 33%
+                  color: blue
+                  font-size: 18px
+                  font-weight: bold
+                entity: sensor.delval_state
